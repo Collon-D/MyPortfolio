@@ -1,0 +1,20 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "base-debug",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "generator": "Ninja"
+        },
+        {
+            "name": "macos-debug",
+            "inherits": "base-debug",
+            "description": "Debug build for macOS"
+        }
+
+    ]
+}
