@@ -14,6 +14,11 @@
             "name": "macos-debug",
             "inherits": "base-debug",
             "description": "Debug build for macOS"
+        },
+        {
+            "name": "windows-debug",
+            "inherits": "base-debug",
+            "description": "Debug build for Windows"
         }
 
     ]
