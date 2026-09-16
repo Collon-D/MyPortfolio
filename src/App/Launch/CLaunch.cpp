@@ -19,6 +19,8 @@ void CLaunch::Initialize()
     m_window.Initialize(800, 600, "Hello, World!");
 
     CTime::Initialize();
+
+    m_renderer.Initialize();
 }
 
 void CLaunch::Run()
@@ -28,12 +30,12 @@ void CLaunch::Run()
         m_window.PollEvents();
 
         CTime::Update();
-
-        std::cout << CTime::GetDeltaTime() << std::endl;
     }
 }
 
 void CLaunch::CleanUp()
 {
+    m_renderer.CleanUp();
+
     m_window.CleanUp();
 }

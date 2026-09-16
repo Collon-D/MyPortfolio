@@ -20,7 +20,7 @@ void CTime::Update()
 
     PreviousTime = CurrentTime;
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(16));
+    std::this_thread::sleep_for(std::chrono::milliseconds(8));
 }
 
 float CTime::GetDeltaTime() { return DeltaTime; }

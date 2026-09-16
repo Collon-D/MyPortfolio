@@ -1,4 +1,6 @@
 
+find_package(Vulkan REQUIRED)
+
 add_executable(App)
 
 target_sources(App
@@ -27,6 +29,8 @@ target_include_directories(App
 target_link_libraries(App
     PRIVATE
         glfw
+        Vulkan::Vulkan
+        Engine
 )
 
 set_target_properties(App PROPERTIES

@@ -7,13 +7,15 @@ target_sources(Engine
     PRIVATE
         Renderer/CRenderer.cpp
 
-        GraphicsAPI/Vulkan/Instance/CInstance.cpp
+        GraphicsAPI/Vulkan/Context/CContext.cpp
 )
 
 target_include_directories(Engine
     PUBLIC
+        Renderer/
+
+        GraphicsAPI/Vulkan/Context
         GraphicsAPI/Vulkan/Header
-        GraphicsAPI/Vulkan/Instance
 )
 
 target_link_libraries(Engine

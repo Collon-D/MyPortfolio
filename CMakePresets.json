@@ -13,12 +13,22 @@
         {
             "name": "macos-debug",
             "inherits": "base-debug",
-            "description": "Debug build for macOS"
+            "description": "Debug build for macOS",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Darwin"
+            }
         },
         {
             "name": "windows-debug",
             "inherits": "base-debug",
-            "description": "Debug build for Windows"
+            "description": "Debug build for Windows",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
         }
 
     ]

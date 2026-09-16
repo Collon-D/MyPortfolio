@@ -2,10 +2,14 @@
 
 #include "CWindow.h"
 
+#include "CRenderer.h"
+
 class CLaunch
 {
 private:
     CWindow m_window;
+
+    CRenderer m_renderer;
 
 public:
     CLaunch();
