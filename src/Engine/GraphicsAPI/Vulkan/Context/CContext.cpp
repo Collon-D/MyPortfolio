@@ -51,10 +51,16 @@ void CContext::CreateInstance()
 
 	VkInstanceCreateInfo createInfo{
 		.sType                   = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
-		.pApplicationInfo        = &appInfo,
-		.enabledExtensionCount   = static_cast<uint32_t>(extensions.size()),
-		.ppEnabledExtensionNames = extensions.data(),
+		.pApplicationInfo        = &appInfo
 	};
+
+	// if MacOS is used
+#ifdef __APPLE__
+	extensions.push_back(VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
+	createInfo.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
+#endif
+		createInfo.enabledExtensionCount   = static_cast<uint32_t>(extensions.size());
+		createInfo.ppEnabledExtensionNames = extensions.data();
 
 	// Enable Validation Layers
 	if (ENABLE_VALIDATION_LAYERS)
